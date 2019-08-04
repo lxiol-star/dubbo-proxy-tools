@@ -9,4 +9,4 @@
 功能：
 目前支持通过zookeeper来拉去rpc服务内容，然后通过netty封装数据之后发送到server端。
 缺陷：
-对于多台provider需要进行ip指定的功能暂未开发完成，目前只能针对单独一台provider机器进行rpc测试
+对于多台provider需要进行ip指定的功能暂未开发完成，目前已能够支持对于集群provider的随机性测试，后续会引入针对特定provider机器的测试功能。
