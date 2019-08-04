@@ -18,8 +18,9 @@ public class LinkedMultiValueMap<K, V> implements MultiValueMap<K, V> {
     public void add(K key, V value) {
         if (key != null) {
             // 如果有这个Key就继续添加Value，没有就创建一个List并添加Value
-            if (!mSource.containsKey(key))
+            if (!mSource.containsKey(key)){
                 mSource.put(key, new ArrayList<V>(2));
+            }
             mSource.get(key).add(value);
         }
     }

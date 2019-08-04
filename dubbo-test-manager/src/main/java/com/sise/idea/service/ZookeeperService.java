@@ -4,6 +4,7 @@ import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.common.URL;
 import com.sise.idea.cache.MethodCache;
 import com.sise.idea.cache.UrlCache;
+import com.sise.idea.cache.UrlMultiCache;
 import com.sise.idea.handler.JarHandler;
 import com.sise.idea.handler.ZookeeperHandler;
 import com.sise.idea.model.JarPropModel;
@@ -44,7 +45,7 @@ public class ZookeeperService {
     public List<String> getServiceNameList(String address) {
         String host = getHost(address);
         int port = getPort(address);
-        ZookeeperHandler zookeeperHandler = new ZookeeperHandler(host,port);
+        ZookeeperHandler zookeeperHandler = new ZookeeperHandler(host, port);
         zookeeperHandler.doConnect();
         List<ServiceModel> serviceModels = zookeeperHandler.getServices();
         List<String> serviceNameList = new ArrayList<>();
@@ -64,7 +65,7 @@ public class ZookeeperService {
             for (URL newUrl : urls) {
                 //todo 这里面有bug，导致有新的provider注入之后，请求会发生异常
                 //URL类缓存
-                UrlCache.put(serviceName, newUrl);
+                UrlMultiCache.put(serviceName, newUrl);
             }
 
 

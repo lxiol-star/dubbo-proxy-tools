@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sise.idea.cache.MethodCache;
 import com.sise.idea.cache.UrlCache;
+import com.sise.idea.cache.UrlMultiCache;
 import com.sise.idea.client.NettySimpleClient;
 import com.sise.idea.common.SysException;
 import com.sise.idea.context.ResponseDispatcher;
@@ -57,7 +58,7 @@ public class DubboRpcService {
         BeanUtils.copyProperties(rpcDataVo, rpcDataDto);
 
         //clienturl缺少信息(对于多个provider需要加入额外的处理机制)
-        URL clienturl = UrlCache.get(rpcDataDto.getServiceName());
+        URL clienturl = UrlMultiCache.get(rpcDataDto.getServiceName());
 
         //设置dubbod的编码器协议类型
         clienturl = clienturl.addParameter(Constants.CODEC_KEY, "dubbo");
