@@ -33,6 +33,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+
         </dependency>
 
         <!--&lt;!&ndash; 注意版本不能太高，否则Unimplemented for /* 错误 &ndash;&gt;-->

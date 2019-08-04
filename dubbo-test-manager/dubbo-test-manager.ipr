@@ -13,47 +13,13 @@
       <module name="dubbo-test-manager" target="1.8" />
     </bytecodeTargetLevel>
   </component>
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
-      <inspection_tool class="AliDeprecation" enabled="false" level="CRITICAL" enabled_by_default="false" />
-      <inspection_tool class="Deprecation" enabled="false" level="WARNING" enabled_by_default="false" />
-      <inspection_tool class="JavaDoc" enabled="true" level="WARNING" enabled_by_default="true">
-        <option name="TOP_LEVEL_CLASS_OPTIONS">
-          <value>
-            <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-            <option name="REQUIRED_TAGS" value="" />
-          </value>
-        </option>
-        <option name="INNER_CLASS_OPTIONS">
-          <value>
-            <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-            <option name="REQUIRED_TAGS" value="" />
-          </value>
-        </option>
-        <option name="METHOD_OPTIONS">
-          <value>
-            <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-            <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
-          </value>
-        </option>
-        <option name="FIELD_OPTIONS">
-          <value>
-            <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-            <option name="REQUIRED_TAGS" value="" />
-          </value>
-        </option>
-        <option name="IGNORE_DEPRECATED" value="false" />
-        <option name="IGNORE_JAVADOC_PERIOD" value="true" />
-        <option name="IGNORE_DUPLICATED_THROWS" value="false" />
-        <option name="IGNORE_POINT_TO_ITSELF" value="false" />
-        <option name="myAdditionalJavadocTags" value="date" />
-      </inspection_tool>
     </profile>
     <version value="1.0" />
   </component>
@@ -69,7 +35,7 @@
       <module fileurl="file://$PROJECT_DIR$/dubbo-test-manager.iml" filepath="$PROJECT_DIR$/dubbo-test-manager.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="libraryTable">
