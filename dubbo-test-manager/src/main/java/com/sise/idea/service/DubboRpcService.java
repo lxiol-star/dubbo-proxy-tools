@@ -56,7 +56,7 @@ public class DubboRpcService {
         RpcDataDto rpcDataDto = new RpcDataDto();
         BeanUtils.copyProperties(rpcDataVo, rpcDataDto);
 
-        //clienturl缺少信息
+        //clienturl缺少信息(对于多个provider需要加入额外的处理机制)
         URL clienturl = UrlCache.get(rpcDataDto.getServiceName());
 
         //设置dubbod的编码器协议类型

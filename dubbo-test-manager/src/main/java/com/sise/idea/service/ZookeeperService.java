@@ -62,6 +62,7 @@ public class ZookeeperService {
             URL url = new URL("zookeeper", host, port, map);
             List<URL> urls = zookeeperHandler.getDubboDetail(url);
             for (URL newUrl : urls) {
+                //todo 这里面有bug，导致有新的provider注入之后，请求会发生异常
                 //URL类缓存
                 UrlCache.put(serviceName, newUrl);
             }

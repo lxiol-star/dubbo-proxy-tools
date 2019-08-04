@@ -16,6 +16,6 @@ spring:
 
 #  jar存放的地址
 jar:
-    path: file:D:\app\lib-test\api-1.0.jar
+    path: file:D:\app\lib-test\ab-test.jar
 
 
