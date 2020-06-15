@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iubbo</title>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="../js/vue.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/constants.js"></script>
+
+    <!-- 引入样式 -->
+    <!--<link rel="stylesheet" href="https://unpkg.com/element-ui@1.4/lib/theme-default/index.css">-->
+    <!-- 引入组件库 -->
+    <!--<script src="https://unpkg.com/element-ui@1.4/lib/index.js"></script>-->
+</head>
+<style>
+    .head, .middle {
+        width: 1300px;
+        margin: 0 auto;
+    }
+
+    .json_input {
+        height: 400px;
+        padding: 10px 10px;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 20px;
+    }
+
+    .other_arg_input {
+        width: 400px;
+        display: block;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+
+    .input-with-select .el-input-group__prepend {
+        background-color: #fff;
+    }
+
+</style>
+<body>
+<div id="app">
+
+<h3 style="text-align: center;width: 100%;padding: 15px 0px;background-color: #8bd435;margin-top: -10px;color: white;">
+    iubbo 测试工具
+    <span style="position: relative;left: 500px;">
+	<a href="./readme.html" style="text-decoration: none;color: white;">使用文档</a>
+    <a  v-if="!isLogin" href="./user-login.html" style="text-decoration: none;color: white;position: relative;left: 50px;">登录</a>
+	</span>
+</h3>
+
+
+
+
+    <div class="locadingPage" id="loadingLabel">
+        <div class="loading" style="margin: 100px auto;"></div>
+    </div>
+    <div class="head">
+        <el-row :gutter="20">
+            <el-col :span="6">
+                <!--<el-input v-model="reqArg.zkHost" placeholder="请输入zk地址">-->
+                <!--</el-input>-->
+
+                <el-select filterable class="search-input" style="width:550px;" :filter-method="zkAddrFilter"
+                           v-model="reqArg.zkHost" placeholder="常用zk地址">
+                    <el-option
+                            v-for="item in allSelectCommonzk"
+                            :key="item.host"
+                            :label="item.host"
+                            :value="item.ip">
+                    </el-option>
+                </el-select>
+
+            </el-col>
+            <el-col :span="6" style="margin-left: 250px;">
+                <el-button @click="reqZkHost">
+                    拉取zk地址
+                </el-button>
+            </el-col>
+        </el-row>
+        <br>
+        <el-row :gutter="20">
+            <el-col :span="8">
+                <el-select filterable class="search-input" style="width:550px;" :filter-method="selectFilter"
+                           v-model="reqArg.interfaceName" placeholder="请输入服务名称">
+                    <el-option
+                            v-for="item in allSelectNav"
+                            :value="item">
+                    </el-option>
+                </el-select>
+            </el-col>
+            <el-col :span="8" style="margin-left:250px;">
+                <el-input v-model="reqArg.methodName" placeholder="请输方法名称">
+                </el-input>
+            </el-col>
+
+        </el-row>
+        <br>
+        <div style="color:#666;padding: 20px 40px;background-color: rgba(229, 229, 229, 0.57);
+		width: 400px;border-radius: 10px;">
+
+            <div style="margin-left: 150px;">
+                设置请求参数
+            </div>
+
+
+        </div>
+        <br>
+        <el-tabs v-model="argChooseType" type="card">
+            <el-tab-pane label="基础参数" name="baseArg">
+                <br><br>
+                <el-row :gutter="20">
+                    <el-col :span="6">
+                        <el-select v-model="editArg.argType" placeholder="请选择">
+                            <el-option
+                                    v-for="item in options"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </el-col>
+                    <el-col :span="10">
+                        <el-input v-model="editArg.argValue" placeholder="value">
+                        </el-input>
+                    </el-col>
+
+                    <el-col :span="6">
+                        <el-button style="display: inline-block;" @click="addArg()">添加参数</el-button>
+                        <el-button style="display: inline-block;" @click="showSelfArgDialog()">自定义参数</el-button>
+                    </el-col>
+                </el-row>
+                <br><br>
+                <el-table
+                        :data="tableData"
+                        border
+                        style="width: 1300px;margin: 0 auto;">
+
+                    <el-table-column :width="200"
+                                     prop="argType"
+                                     label="参数类型">
+                    </el-table-column>
+                    <el-table-column :width="600"
+                                     prop="argValue"
+                                     label="参数值">
+                    </el-table-column :width="200">
+                    <el-table-column
+                            prop="argValue"
+                            label="操作">
+                        <template slot-scope="scope">
+                            <el-button type="primary" @click="editSelfArg(scope.row,scope.$index)">编辑</el-button>
+                            <el-button type="danger" @click="delSelfArg(scope.$index)">删除</el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </el-tab-pane>
+            <el-tab-pane label="额外参数" name="otherArg">
+                <br><br>
+                <!--<el-row :gutter="20">-->
+                <el-form ref="form" label-width="150px">
+                    <el-form-item label="超时设置 (毫秒)">
+                        <el-input-number v-model="reqArg.timeout" :min="1000" :max="100000"
+                                         label="timeout"></el-input-number>
+                    </el-form-item>
+
+                    <el-form-item label="重试次数">
+                        <el-input-number v-model="reqArg.actives" :min="1" :max="10" label="actives"></el-input-number>
+                    </el-form-item>
+
+                    <el-form-item label="直连url">
+                        <el-input v-model="reqArg.url" label="url" style="width: 300px;"
+                                  placeholder="格式：10.11.10.55:8099"></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="组配置">
+                        <el-input v-model="reqArg.group" label="group" style="width: 300px;"
+                                  placeholder="dubbo-group"></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="服务版本配置">
+                        <el-input v-model="reqArg.version" label="version" style="width: 300px;"
+                                  placeholder="dubbo-version"></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="负载均衡策略">
+                        <el-select v-model="reqArg.loadbalance" placeholder="请选择负载均衡方式">
+                            <el-option label="关闭" value=""></el-option>
+                            <el-option label="随机" value="random"></el-option>
+                            <el-option label="轮询" value="roundrobin"></el-option>
+                            <el-option label="最少活跃调用" value="leastactive"></el-option>
+                            <el-option label="一致性哈希" value="consistenthash"></el-option>
+                        </el-select>
+                    </el-form-item>
+
+                    <el-form-item label="异步调用">
+                        <el-switch v-model="reqArg.async"></el-switch>
+                    </el-form-item>
+
+                    <!--</el-row>-->
+                </el-form>
+            </el-tab-pane>
+            <el-tab-pane v-if="isLogin" label="请求记录" name="historyArg">
+                <template>
+                    <el-table
+                            :data="reqArgRecordList"
+                            height="400px"
+                            style="width: 100%;"
+
+                    >
+                        <el-table-column
+                                fixed
+                                label="接口地址"
+                                prop="methodName"
+                                width="550"
+                        >
+                        </el-table-column>
+                        <el-table-column
+                                fixed
+                                label="参数内容"
+                                prop="argDetail"
+                                width="400"
+                        >
+                        </el-table-column>
+
+                        <el-table-column
+                                fixed="right"
+                                label="操作"
+                        >
+                            <template slot-scope="scope">
+                                <el-button
+                                        type="primary"
+                                        size="small"
+                                        @click="getCurArgDetail(scope.row,scope.$index)"
+                                >
+                                    选用参数
+                                </el-button>
+
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </template>
+                <el-pagination
+                        background
+                        layout="prev, pager, next"
+                        :page-size="6"
+                        @current-change="handleCurrentPage"
+                        :total="totalCount">
+                </el-pagination>
+            </el-tab-pane>
+        </el-tabs>
+
+
+    </div>
+    <div class="middle">
+        <br><br>
+        <el-row>
+            <el-col>
+                <el-button @click="reqDubbo()" style="margin-top: 20px;background-color: rgba(229, 229, 229, 0.57);">
+                    发送dubbo请求
+                </el-button>
+                <el-button  v-if="isLogin" @click="saveArg()" style="margin-top: 20px;background-color: rgba(229, 229, 229, 0.57);">
+                    保存请求用例
+                </el-button>
+            </el-col>
+        </el-row>
+    </div>
+
+    <br><br>
+    <el-row style="margin: 0 auto;width: 1300px;margin-bottom: 200px;">
+        <div style="margin-left: 50px;">
+            <b>Dubbo 接口响应结果</b>
+            <pre id="json-renderer" style="border: solid 1px #f8f6f2;font-size: 18px;"></pre>
+        </div>
+
+    </el-row>
+
+    <!-- 自定义参数编辑框 -->
+    <el-dialog title="自定义参数" :visible.sync="selfEditdialogFormVisible" label-width="88px">
+        <el-form :model="selfDefArg">
+            <!-- 考虑如果类里面嵌套有类 所以需要自定义编写json格式内容 -->
+            <el-form-item label="自定义对象参数">
+                <el-input v-model="selfDefArg.argType" placeholder="对象的全名com.sise.xxx">
+                </el-input>
+                <br/> <br/>
+                <textarea class="el-input__inner json_input" v-model="selfDefArg.argValue" placeholder="json格式的参数">
+
+				</textarea>
+                <br>
+                <el-button @click="tansferToJson">json格式化参数</el-button>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <!--<el-button @>取 消</el-button>-->
+            <el-button type="primary" @click="sureSelfArg">确 定</el-button>
+        </div>
+    </el-dialog>
+
+
+    <!-- 编辑参数编辑框 -->
+    <el-dialog title="编辑参数" :visible.sync="editDialogFormVisible" label-width="88px">
+        <el-form :model="selfDefArg">
+            <!-- 考虑如果类里面嵌套有类 所以需要自定义编写json格式内容 -->
+            <el-form-item label="自定义对象参数">
+                <el-input v-model="selfDefArg.argType" placeholder="对象的全名com.sise.xxx">
+                </el-input>
+                <br/> <br/>
+                <textarea class="el-input__inner json_input" v-model="selfDefArg.argValue" placeholder="json格式的参数">
+
+				</textarea>
+                <br>
+                <el-button @click="tansferToJson">json格式化参数</el-button>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <!--<el-button >取 消</el-button>-->
+            <el-button type="primary" @click="sureEditArg">确 定</el-button>
+        </div>
+    </el-dialog>
+
+</div>
+
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/axios.min.js"></script>
+<script src="../js/util.js"></script>
+<script src="../js/iubbo.x.js"></script>
+<script src="../js/json-viewer.js"></script>
+<script id="bfwone" data="dep=jquery.17&err=0" type="text/javascript" src="../js/bfwone.js"></script>
+<script type="text/javascript">
+    // bready(function() {
+    // 	use(["json-viewer", "json-viewer"], function() {
+    // 		var jsonstr = $("#rpcResponse").val();
+    //
+    // 		$('#json-renderer').jsonViewer(JSON.parse(jsonstr));
+    //
+    // 	});
+    // });
+</script>
+</html>
