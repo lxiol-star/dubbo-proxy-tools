@@ -7,8 +7,8 @@ new Vue({
             allSelectCommonzk: [],
             isLogin: false,
             commonzk: [{
-                host: 'test-zk:2181',
-                ip: 'localhost:2181'
+                host: 'localhost:2181',
+                ip: '127.0.0.1:2181'
             }],
             selfEditdialogFormVisible: false,
             editDialogFormVisible: false,

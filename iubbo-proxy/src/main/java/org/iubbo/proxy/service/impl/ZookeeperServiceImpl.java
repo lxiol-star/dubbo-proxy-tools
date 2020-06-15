@@ -40,7 +40,7 @@ public class ZookeeperServiceImpl implements ZookeeperService {
 
     public static void main(String[] args) {
         ZookeeperServiceImpl zk = new ZookeeperServiceImpl();
-        List<String> serviceList = zk.getServices("xxx.xxx.xxx.xxx:2181");
+        List<String> serviceList = zk.getServices("localhost:2181");
         for (String s : serviceList) {
             System.out.println(s);
         }
