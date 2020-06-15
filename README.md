@@ -6,29 +6,27 @@
 
 如果没有合适的zk可以手动输入具体地址加端口号码,目前已配置了dev环境crm的zk，test环境crm的zk和test环境nora的zk。
 
-![图片](https://uploader.shimo.im/f/Vh1vYMNvQ40xu06F.png!thumbnail)
-
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223431_e10a577b_1777749.png "屏幕截图.png")
 
 ## **拉取zk的配置**
 
 在点击了拉取zk地址按钮之后，会有弹窗提示拉取成功，截图如下：
 
-![图片](https://uploader.shimo.im/f/hXtu12LimwybvPBX.png!thumbnail)
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223456_9dc066b4_1777749.png "屏幕截图.png")
 
 然后可以搜索你需要调用的dubbo服务名称
 
-![图片](https://uploader.shimo.im/f/orZYcEhKXB6wwgfZ.png!thumbnail)
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223520_04a124f9_1777749.png "屏幕截图.png")
 
 最后还需要指定对应的方法全称,这里以调用CrmUserInfoService的get方法为例：
 
-![图片](https://uploader.shimo.im/f/hnnrdAxnbEOlqfa5.png!thumbnail)
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223538_890bee6d_1777749.png "屏幕截图.png")
 
 手动设置参数信息,然后逐个添加：
 
 调用成功截图：
 
-![图片](https://uploader.shimo.im/f/bxt6bLm6bNRUKOnI.png!thumbnail)
-
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223611_b8b14f9e_1777749.png "屏幕截图.png")
 
 ## dubbo额外配置
 
