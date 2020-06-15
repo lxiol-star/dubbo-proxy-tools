@@ -7,14 +7,8 @@ new Vue({
             allSelectCommonzk: [],
             isLogin: false,
             commonzk: [{
-                host: 'd.zk01.jiebao.zhenaioa.com:6681',
-                ip: '10.51.1.23:6681'
-            }, {
-                host: 't.zk01.jiebao.zhenai.com:6681',
-                ip: '10.51.1.46:13182'
-            }, {
-                host: 't.nora.zk:2181',
-                ip: '10.51.2.7:2181'
+                host: 'test-zk:2181',
+                ip: 'localhost:2181'
             }],
             selfEditdialogFormVisible: false,
             editDialogFormVisible: false,

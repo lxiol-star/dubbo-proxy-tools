@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>用户登录</title>
 
-    <link rel="stylesheet" href="../css/index.css">
+<!--    <link rel="stylesheet" href="../css/index.css">-->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
     <link rel="stylesheet" href="../css/style.css">
@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<h3 style="text-align: center;width: 100%;padding: 15px 0px;background-color: #8bd435;margin-top: -10px;color: white;">
+<h3 class="commonTopBg">
     iubbo 测试工具
     <span style="position: relative;left: 500px;">
 	<a href="./readme.html" style="text-decoration: none;color: white;">使用文档</a>
@@ -33,7 +33,7 @@
                     <el-input  prefix-icon="el-icon-lock"  v-model="userInfo.password" placeholder="密码"></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="success" style="width: 100%;" @click="userLogin"  round>登录</el-button>
+                    <el-button type="default" style="width: 100%;" @click="userLogin"  round>登录</el-button>
                 </el-form-item>
             </el-form>
         </div>
