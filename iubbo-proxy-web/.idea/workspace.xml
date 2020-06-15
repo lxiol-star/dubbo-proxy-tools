@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df268777-1f38-4e12-971d-cba8bbf5a236" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/iubbo-proxy-web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/iubbo.x.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/iubbo.x.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../iubbo-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../iubbo-proxy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../iubbo-proxy/src/main/java/org/iubbo/proxy/service/impl/ZookeeperServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../iubbo-proxy/src/main/java/org/iubbo/proxy/service/impl/ZookeeperServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../iubbo-proxy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../iubbo-proxy/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="df268777-1f38-4e12-971d-cba8bbf5a236" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,8 +28,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="settings.editor.selected.configurable" value="com.alibabacloud.intellij.config.SshProfileConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -68,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592226092434</updated>
       <workItem from="1592226094027" duration="2416000" />
-      <workItem from="1592228913336" duration="1647000" />
+      <workItem from="1592228913336" duration="1877000" />
     </task>
     <servers />
   </component>
