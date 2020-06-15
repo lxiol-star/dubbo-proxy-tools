@@ -1,105 +1,63 @@
-# **常规使用步骤**
+不知道你是否在工作中有遇到过类似情况：
+dubbo接口调试复杂，需要通过telnet命令或者通过consumer调用来触发。
+telnet语句参数格式复杂，每次编写都要小心谨慎，一旦出错又需重来。
+复杂对象参数传参调用接口复杂，编写java api调用接口时间成本较高。
 
-## **指定zk地址**
+![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0615/235405_bb3f02d3_1777749.png)
+上述这些坑我在工作中都有遇见过，发现大部分耗时都会卡在调用dubbo服务做自测的阶段，所以后来花费了写业余时间写了一款高效的dubbo测试工具开源给大家使用。
+这款工具目前已在实际工作中应用半年多，基本功能已经成熟，后续依旧会进行版本维护。
+相关的代码地址为：
+[https://gitee.com/IdeaHome_admin/dubbo-proxy-tools
+](https://gitee.com/IdeaHome_admin/dubbo-proxy-tools)
+*ps: 如果大家喜欢，希望能给出一颗宝贵的star*
 
-在测试dubbo接口之前，我们通常都会去拉去一遍zk上边的地址，操作如下图：
+<br>
 
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223431_e10a577b_1777749.png "屏幕截图.png")
+### 关于如何使用本工具
 
-如果没有合适的zk可以手动输入具体地址加端口号码,zk的地址需要在前端js里面配置：
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/232512_ea50d642_1777749.png "屏幕截图.png")
+**前端代码的部署**
+前端采用非常简单的vue技术，只需要将文件部署到一台nginx上边即可运作。
+但是有两个小点需要改动下js配置
 
+**1.指定zk地址**
+在测试dubbo接口之前，我们通常都会去拉取一遍zk上边的service地址，操作如下图：
+!!在这里插入片]描述](https://img-blogtcsdnimgps://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWRlci5zaGltby5pbS9mLzFNaUFvTGlENnpBRHBmVngucG5nIXRodW1ibmFpbA?x-oss-process=image/format,png)
 
-## **拉取zk的配置**
+![图片](https://images.gitee.com/uploads/images/2020/0615/235405_97e84efc_1777749.jpeg)
 
-在点击了拉取zk地址按钮之后，会有弹窗提示拉取成功，截图如下：
-
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223456_9dc066b4_1777749.png "屏幕截图.png")
-
-然后可以搜索你需要调用的dubbo服务名称
-
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223520_04a124f9_1777749.png "屏幕截图.png")
-
-最后还需要指定对应的方法全称,这里以调用CrmUserInfoService的get方法为例：
-
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223538_890bee6d_1777749.png "屏幕截图.png")
-
-手动设置参数信息,然后逐个添加：
-
-调用成功截图：
-
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223611_b8b14f9e_1777749.png "屏幕截图.png")
-
-## dubbo额外配置
-
-在基础参数配置项的旁边，还有一个模块是专门配置consumer端的额外内容，这些参数项都是在平时工作中可能会应用到的场景，需要的时候可以进行配置。这里面也配备了工作中非常常用的直连选项。
-
-![图片](https://uploader.shimo.im/f/Gcw5JqL5YlgZQGzc.png!thumbnail)
-
-
-
-# **特殊参数请求**
-
-## 参数类型案例
-
-该平台支持多种开发中常见的参数格式调用，目前支持常规参数
-
-**Java的常用基本类型数据：**boolean，short，int，long，double，char，float
-
-**Java中常用的包装类数据：**
-
-```
-java.lang.String,
-java.lang.Integer,
-java.lang.Object,
-java.util.List,
-java.lang.Class,
-java.lang.Long,
-java.lang.Boolean,
-java.util.Map,
-java.util.Date,
-java.lang.Float,
-java.lang.Double
-```
-### 对于简单的数据类型传递
-
-![图片](https://uploader.shimo.im/f/1MiAoLiD6zADpfVx.png!thumbnail)
-
-![图片](https://uploader.shimo.im/f/s8WRZPpOOyIn7LWF.png!thumbnail)
-
-![图片](https://uploader.shimo.im/f/aftGOrdiJK0fUkfs.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235405_4e927b0c_1777749.jpeg)
 
 ### **多参数，中英文混合传递**
 
-![图片](https://uploader.shimo.im/f/CLoLIsGXQJYXDxa5.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235405_4c081d7c_1777749.jpeg)
 
 
 ### List类型参数的传递
 
-![图片](https://uploader.shimo.im/f/Nc5xZfr7gSYtNAjG.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235405_871501ad_1777749.jpeg)
 
 ### Class类型的参数传递
 
-![图片](https://uploader.shimo.im/f/cDDbIt93U1Ysh1x5.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235405_0e72b93b_1777749.jpeg)
 
 ### Map类型的参数传递
 
-![图片](https://uploader.shimo.im/f/Q3yK4kQ2gOUaZ5ZG.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_5e462a6d_1777749.jpeg)
 
 ### Date类型的参数传递
 
-![图片](https://uploader.shimo.im/f/UsVY6h4EjMA5kU0O.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_b8a3563c_1777749.jpeg)
 
 
 ### 自定义对象参数传参
 
 如果在实际应用中遇到了这种场景，需要调用以下的接口，那么这个使用就需要使用自定义参数了：
 
-![图片](https://uploader.shimo.im/f/GKpiGPwqJrUZVah0.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_d4475504_1777749.jpeg)
 
-![图片](https://uploader.shimo.im/f/aNmj770zEzEvTjVF.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_4c79cf11_1777749.jpeg)
 
-![图片](https://uploader.shimo.im/f/CrImGXuoCcMImCSs.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_2e746821_1777749.jpeg)
 
 ### 复杂类型自定义参数传递
 
@@ -109,7 +67,7 @@ java.lang.Double
 List<UserDTO> testUserDtoList(List<UserDTO> userDTOList,Class clazz);
 ```
 那么此时的传参案例可以像下边这样来写：
-![图片](https://uploader.shimo.im/f/OpOJB7oQshg63DXf.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_8a68813d_1777749.jpeg)
 
 
 
@@ -124,11 +82,11 @@ List<UserDTO> testUserDtoList(List<UserDTO> userDTOList,Class clazz);
 那么传入的参数就必须先填List参数，再写Class参数。
 **正确示例：**（先写了List参数，再写Class参数）
 
-![图片](https://uploader.shimo.im/f/vyFkbFJTYDIwkPzU.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_78dbda9e_1777749.jpeg)
 
 **错误示例：**（先写了Class参数，再写List参数）
 
-![图片](https://uploader.shimo.im/f/X0tmB5KbGu8L96sJ.png!thumbnail)
+![图片](https://images.gitee.com/uploads/images/2020/0615/235406_0cb06ef1_1777749.jpeg)
 
 
 
