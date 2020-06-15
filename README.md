@@ -4,9 +4,11 @@
 
 在测试dubbo接口之前，我们通常都会去拉去一遍zk上边的地址，操作如下图：
 
-如果没有合适的zk可以手动输入具体地址加端口号码,目前已配置了dev环境crm的zk，test环境crm的zk和test环境nora的zk。
-
 ![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/223431_e10a577b_1777749.png "屏幕截图.png")
+
+如果没有合适的zk可以手动输入具体地址加端口号码,zk的地址需要在前端js里面配置：
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0615/232512_ea50d642_1777749.png "屏幕截图.png")
+
 
 ## **拉取zk的配置**
 
