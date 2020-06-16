@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="df268777-1f38-4e12-971d-cba8bbf5a236" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/iubbo.x.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/iubbo.x.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../iubbo-proxy/src/main/java/org/iubbo/proxy/controller/DubboInvokerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../iubbo-proxy/src/main/java/org/iubbo/proxy/controller/DubboInvokerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../iubbo-proxy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../iubbo-proxy/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592226092434</updated>
       <workItem from="1592226094027" duration="2416000" />
-      <workItem from="1592228913336" duration="5635000" />
+      <workItem from="1592228913336" duration="6208000" />
     </task>
     <servers />
   </component>
