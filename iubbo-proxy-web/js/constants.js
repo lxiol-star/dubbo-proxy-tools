@@ -1,10 +1,10 @@
 let server_addr="http://localhost:7089/";
 
-let reqDubbo="dubboInvoker/index";
-let reqZkAddr="dubboInvoker/getServiceNameList?zkHost=";
+let reqDubbo="dubbo-invoker/index";
+let reqZkAddr="dubbo-invoker/get-service-name-list?zkHost=";
 let selectArgRecord="dubbo-invoke-req-record/select-in-page";
 let saveArg="dubbo-invoke-req-record/save-one";
-let userLogin="dubboInvoker/login";
+let userLogin="dubbo-invoker/login";
 
 
 function getZkAddr(){

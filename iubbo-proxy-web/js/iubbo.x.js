@@ -9,6 +9,9 @@ new Vue({
             commonzk: [{
                 host: 'localhost:2181',
                 ip: '127.0.0.1:2181'
+            },{
+                host: 'test.zk02:2181',
+                ip: '10.1.10.83:2181'
             }],
             selfEditdialogFormVisible: false,
             editDialogFormVisible: false,

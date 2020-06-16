@@ -22,7 +22,7 @@ import static org.iubbo.proxy.config.CommonConstants.SAMPLE_REQ;
  * @version V1.0
  */
 @RestController
-@RequestMapping("/dubboInvoker")
+@RequestMapping("/dubbo-invoker")
 public class DubboInvokerController {
 
 
@@ -52,7 +52,7 @@ public class DubboInvokerController {
         return dubboInvokeService.doInvoke(param);
     }
 
-    @GetMapping(value = "/getServiceNameList")
+    @GetMapping(value = "/get-service-name-list")
     public ResponseDTO<List<String>> getServiceNameList(String zkHost) {
         return ResponseUtil.successResponse(zookeeperService.getServiceNameList(zkHost));
     }
