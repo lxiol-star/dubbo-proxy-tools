@@ -3,8 +3,6 @@
 dubbo接口调试复杂，需要通过telnet命令或者通过consumer调用来触发。
 telnet语句参数格式复杂，每次编写都要小心谨慎，一旦出错又需重来。
 复杂对象参数传参调用接口复杂，编写java api调用接口时间成本较高。
-
-![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0616/085546_3b26a815_1777749.png)
 <br>
 上述这些坑我在工作中都有遇见过，发现大部分耗时都会卡在调用dubbo服务做自测的阶段，所以后来花费了写业余时间写了一款高效的dubbo测试工具开源给大家使用。
 这款工具目前已在实际工作中应用半年多，基本功能已经成熟，后续依旧会进行版本维护。
@@ -24,6 +22,29 @@ telnet语句参数格式复杂，每次编写都要小心谨慎，一旦出错�
 #### 前端代码的部署
 前端采用非常简单的vue技术，只需要将文件部署到一台nginx上边即可运作。
 前端的默认访问页面是test-dubbo-web.html。
+nginx部署方式：建议使用支持多应用部署方式，即在nginx.conf尾部，增加
+include servers/*.conf;  #命名可以调整
+在nginx.conf同级目录下，创建servers目录，并在servers下创建iubbo-proxy.conf
+内容为：
+
+```
+server {
+    listen       9999;  #端口可自行调整
+    server_name  localhost;
+
+    location / {
+        root   /Users/flamingsky/develop/mine/sourcecode/dubbo-proxy-tools/iubbo-proxy-web;
+        index  index.php index.html index.htm;
+    }
+}
+```
+重启nginx即可；
+
+```
+nginx -c /usr/local/etc/nginx/nginx.conf
+nginx -s reload
+```
+
 
 **但是有两个小点需要改动下js配置**
 constants.js
