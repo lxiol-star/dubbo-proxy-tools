@@ -7,7 +7,7 @@ package org.iubbo.proxy.common.utils;
  */
 public class RedisKeyUtil {
 
-    private static final String TOKEN_PREFIX="zhenai:iubbox:%s";
+    private static final String TOKEN_PREFIX="iubbox:%s";
 
     public static String buildToken(String token) {
         return String.format(TOKEN_PREFIX, token);

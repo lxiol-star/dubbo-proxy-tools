@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="658b4111-d896-484a-bb6c-531704839e4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/static/html/jump.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/static/html/test-dubbo-web.html" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/static/html/test-dubbo-web.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/static/html/user-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/static/html/user-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/static/js/iubbo.x.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy-core/src/main/resources/static/js/iubbo.x.js" afterDir="false" />
-    </list>
+    <list default="true" id="658b4111-d896-484a-bb6c-531704839e4b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +103,7 @@
       <updated>1606437885852</updated>
       <workItem from="1606437888753" duration="288000" />
       <workItem from="1606485949207" duration="236000" />
-      <workItem from="1606486431491" duration="2732000" />
+      <workItem from="1606486431491" duration="3061000" />
     </task>
     <task id="LOCAL-00001" summary="iubbox工具2.0.0-release版本发布">
       <created>1606446694779</created>
