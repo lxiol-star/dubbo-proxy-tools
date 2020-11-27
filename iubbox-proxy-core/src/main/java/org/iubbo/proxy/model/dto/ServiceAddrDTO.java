@@ -1,7 +1,3 @@
-/*
- * Copyright (C), 2005-2019, 深圳市珍爱网信息技术有限公司
- */
-
 package org.iubbo.proxy.model.dto;
 
 import lombok.AllArgsConstructor;
@@ -9,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author linhao
+ * @author idea
  * @version V1.0
  * @date 2020/7/2
  */

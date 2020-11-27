@@ -1,5 +1,4 @@
-let server_addr="http://10.11.9.25:7090/";
-// let server_addr="http://127.0.0.1:7090/";
+let server_addr="http://127.0.0.1:7090/";
 
 let reqDubbo="dubbo-invoker/index";
 let reqServiceAddr="dubbo-invoker/get-service-name-list?serviceAddr=";

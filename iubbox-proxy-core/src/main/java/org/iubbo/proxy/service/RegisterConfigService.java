@@ -11,7 +11,7 @@ import java.util.List;
 public interface RegisterConfigService {
 
     /**
-     * 查询所有列表
+     * 查询所有注册中心列表
      *
      * @return
      */

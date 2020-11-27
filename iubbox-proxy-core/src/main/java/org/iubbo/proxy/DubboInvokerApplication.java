@@ -1,5 +1,6 @@
 package org.iubbo.proxy;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,10 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2019/12/19
  */
 @SpringBootApplication
+@Slf4j
 public class DubboInvokerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DubboInvokerApplication.class, args);
-        System.out.println(" >>>>>>>>>>>>>>>> iubbo-proxy is started  >>>>>>>>>>>>>>>> ");
+        log.info(" >>>>>>>>>>>>>>>> iubbox-proxy is started  >>>>>>>>>>>>>>>> ");
     }
 }

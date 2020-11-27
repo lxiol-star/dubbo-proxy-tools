@@ -12,92 +12,53 @@ telnet语句参数格式复杂，每次编写都要小心谨慎，一旦出错�
 ](https://gitee.com/IdeaHome_admin/dubbo-proxy-tools)
 *ps: 如果大家喜欢，希望能给出一颗宝贵的star*
 
+下边部分是针对于2.0.0-release版本进行迭代之后的使用说明文档
 <br>
 
 ### 关于如何部署本工具
 <br>
 
-下载了gitlab的代码之后，你会看到有两个文件包：iubbo-proxy和iubbo-proxy-web，它们分别正好对应了后端代码和前端代码。
+
+新版本的代码结构去除了原先的前后端分离，采用前后端合并的思路进行整合，减轻使用者的部署成本。
+代码内部结构基本如下所示：
+
 ![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0616/085546_c75faf36_1777749.png)
 #### 前端代码的部署
-前端采用非常简单的vue技术，只需要将文件部署到一台nginx上边即可运作。
-前端的默认访问页面是test-dubbo-web.html。
-nginx部署方式：建议使用支持多应用部署方式，即在nginx.conf尾部，增加
-include servers/*.conf;  #命名可以调整
-在nginx.conf同级目录下，创建servers目录，并在servers下创建iubbo-proxy.conf
-内容为：
+前端采用非常简单的vue技术，只需要调整js目录下方的constants.js文件中的server_addr变量即可改变请求地址。
+默认的请求地址为：
 
+```js
+let server_addr="http://127.0.0.1:7090/";
 ```
-server {
-    listen       9999;  #端口可自行调整
-    server_name  localhost;
-
-    location / {
-        root   /Users/flamingsky/develop/mine/sourcecode/dubbo-proxy-tools/iubbo-proxy-web;
-        index  index.php index.html index.htm;
-    }
-}
-```
-重启nginx即可；
-
-```
-nginx -c /usr/local/etc/nginx/nginx.conf
-nginx -s reload
-```
-
-
-**但是有两个小点需要改动下js配置**
-constants.js
-这份文件里面编写了对应的请求server地址，这块是对应了后端服务的url。
-![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0616/085546_2258fdab_1777749.png)
-由于请求dubbo接口需要通过zk注册中心来拉去服务名列表，所以需要在iubbo.x.js里面的commonzk中做配置：
-![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0616/085547_155b7881_1777749.png)
-这里的host是一个别称，相当于一个key用于供前端展示，实际上传输给后端的是用ip这个值。
-
 
 #### 后端代码的部署
-后端工程采用了springboot框架技术，核心的配置放在了application.properties里面：
+后端工程采用了springboot框架技术，核心的配置放在了application.properties里面,调整为对应的redis数据库或者mysql配置即可
 
-```java
-server.port=7089
+```
+server.port=7090
 application.invoker.name=iubbo-invoker-proxy
 
-spring.datasource.druid.password=
-spring.datasource.druid.username=
-spring.datasource.druid.url=jdbc:mysql://127.0.0.1:3306/iubbox-proxy
+spring.datasource.druid.password=password
+spring.datasource.druid.username=root
+spring.datasource.druid.url=jdbc:mysql://10.11.9.243:3306/iubbox
 spring.datasource.druid.driver-class-name=com.mysql.jdbc.Driver
 
 mybatis-plus.configuration.map-underscore-to-camel-case=true
 
 spring.redis.port=6379
-spring.redis.host= 127.0.0.1
+spring.redis.host=localhost
+spring.redis.password=password
+
 
 ```
 
-然后倒入建表的sql：
-
-```sql
-CREATE TABLE `t_dubbo_invoke_req_record` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL COMMENT '用户id',
-  `arg_json` varchar(2500) COLLATE utf8_bin DEFAULT NULL COMMENT 'dubbo请求参数',
-  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
-  `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+然后导入建表的sql，具体配置在SQL目录文件夹中的import.sql文件。
 
 
-CREATE TABLE `t_user` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
-  `username` varchar(60) COLLATE utf8_bin DEFAULT NULL,
-  `password` varchar(30) COLLATE utf8_bin DEFAULT NULL,
-  `createTime` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updateTime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-```
 **t_user** 用于记录相关的用户账号，方便于保存用户账号信息。
 **t_dubbo_invoke_req_record** 用于记录请求dubbo接口的用例信息。
+**t_register_config** 用于记录注册中心的配置信息
+
 
 最后就是启动入口类**org.iubbo.proxy.DubboInvokerApplication**
 
@@ -115,7 +76,7 @@ CREATE TABLE `t_user` (
 首页截图：
 ![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0616/085547_bc7daed7_1777749.png)
 
-**1.指定zk地址**
+**1.指定zk注册地址**
 在测试dubbo接口之前，我们通常都会去拉取一遍zk上边的service地址，操作如下图:
 先在文本框点击，输入和js配置有关的字母或数字会有模糊匹配的选项供各位选择：
 ![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0616/085547_34da96ae_1777749.png)

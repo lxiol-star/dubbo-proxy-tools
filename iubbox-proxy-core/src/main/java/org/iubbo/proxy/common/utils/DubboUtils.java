@@ -1,7 +1,3 @@
-/*
- * Copyright (C), 2005-2019, 深圳市珍爱网信息技术有限公司
- */
-
 package org.iubbo.proxy.common.utils;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
@@ -14,7 +10,7 @@ import org.iubbo.proxy.model.dto.DubboInvokerParamDTO;
 import org.springframework.util.StringUtils;
 
 /**
- * @author linhao
+ * @author idea
  * @version V1.0
  * @date 2020/7/3
  */
