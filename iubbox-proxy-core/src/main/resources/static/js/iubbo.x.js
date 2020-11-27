@@ -133,6 +133,7 @@ new Vue({
             this.getAllUser();
         } else {
             this.isLogin = false;
+            this.getZkList();
         }
     },
 
@@ -306,9 +307,7 @@ new Vue({
          */
         reqDubbo: function () {
             var that = this;
-            console.log(this.reqArg.loadbalance !='');
-            console.log(this.reqArg.url !='' );
-            if (this.reqArg.loadbalance != ''  && this.reqArg.url != '' ) {
+            if (this.reqArg.loadbalance != null  && this.reqArg.url != '' ) {
                 this.$message({
                     message: "直连和负载均衡设置出现冲突",
                     type: 'warning'
