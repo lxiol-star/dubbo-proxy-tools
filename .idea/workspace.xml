@@ -1,6 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="658b4111-d896-484a-bb6c-531704839e4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/DubboInvokerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/common/utils/DubboUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/config/NacosConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/controller/DubboInvokerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/dao/RegisterConfigDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/ChangeReqArgVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/DubboInvokerRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/DubboResponseItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/ServiceAddrDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/ServiceInfoResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/po/RegisterConfigPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/NacosClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/RegisterConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/impl/DubboInvokeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/impl/NacosClientServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/impl/RegisterConfigServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/html/jump.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/img/readme.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/user-login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/.idea/iubbo-proxy-web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/html/loading.html" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/html/loading.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/html/readme.html" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/html/readme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/html/test-dubbo-web.html" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/html/test-dubbo-web.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/html/user-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/html/user-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/img/readme.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/axios.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/axios.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/bfwone.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/bfwone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/iubbo.x.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/iubbo.x.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/json-viewer.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/json-viewer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/user-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy-web/js/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/resources/static/js/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/.idea/iubbo-proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/DubboInvokerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/common/RequireLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/common/RequireLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/common/constants/ResponseDTOConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/common/constants/ResponseDTOConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/common/utils/BeanCopyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/common/utils/BeanCopyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/common/utils/RedisKeyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/common/utils/RedisKeyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/common/wrapper/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/common/wrapper/PageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/config/CommonConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/config/CommonConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/config/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/config/ReferenceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/config/ReferenceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/controller/DubboInvokeReqRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/controller/DubboInvokeReqRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/controller/DubboInvokerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/dao/DubboInvokeReqRecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/dao/DubboInvokeReqRecordDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/dto/DubboInvokeReqRecordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/DubboInvokeReqRecordDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/dto/DubboInvokeRespRecordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/DubboInvokeRespRecordDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/dto/DubboInvokerParamDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/DubboInvokerParamDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/dto/ResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/ResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/dto/ResponseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/ResponseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/po/DubboInvokeReqRecordPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/po/DubboInvokeReqRecordPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/model/po/UserPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/model/po/UserPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/DubboInvokeReqRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/DubboInvokeReqRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/DubboInvokeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/DubboInvokeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/ZookeeperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/ZookeeperService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/impl/DubboInvokeReqRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/impl/DubboInvokeReqRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/impl/DubboInvokeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/impl/RedisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/impl/RedisServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/java/org/iubbo/proxy/service/impl/ZookeeperServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy/service/impl/ZookeeperServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iubbo-proxy/src/main/resources/logback.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kqpHCRbHyId9hcSbYdYDKu0zae" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.alibabacloud.intellij.config.SshProfileConfigurable" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/iubbox-proxy/src/main/java/org/idea/proxy" />
+      <recent name="$PROJECT_DIR$/iubbox-proxy/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="658b4111-d896-484a-bb6c-531704839e4b" name="Default Changelist" comment="" />
+      <created>1606437885852</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606437885852</updated>
+      <workItem from="1606437888753" duration="288000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="499" y="-863" key="#Project_Structure" timestamp="1606438182640">
+      <screen x="-61" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="499" y="-863" key="#Project_Structure/0.23.1792.1045/-61.-1057.1920.1057@-61.-1057.1920.1057" timestamp="1606438182640" />
+    <state x="528" y="-833" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1606438250811">
+      <screen x="-61" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="528" y="-833" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1792.1045/-61.-1057.1920.1057@-61.-1057.1920.1057" timestamp="1606438250811" />
+    <state x="751" y="-622" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1606438127493">
+      <screen x="-61" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="751" y="-622" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1792.1045/-61.-1057.1920.1057@-61.-1057.1920.1057" timestamp="1606438127493" />
+    <state x="408" y="-916" key="SettingsEditor" timestamp="1606437899877">
+      <screen x="-61" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="408" y="-916" key="SettingsEditor/0.23.1792.1045/-61.-1057.1920.1057@-61.-1057.1920.1057" timestamp="1606437899877" />
+    <state x="329" y="-831" key="new project wizard" timestamp="1606438268165">
+      <screen x="-61" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="329" y="-831" key="new project wizard/0.23.1792.1045/-61.-1057.1920.1057@-61.-1057.1920.1057" timestamp="1606438268165" />
   </component>
 </project>
