@@ -282,5 +282,8 @@ List<UserDTO> testUserDtoList(List<UserDTO> userDTOList,Class clazz);
 
 目前该工具已经在自己公司运行一年左右，较为平稳，给团队的开发效率带来了极大地提升。希望本工具也能对各位有所帮助。
 
+<br/>
+如果大家有需要对该工具后续进行迭代开发或者特殊定制的，可以私聊本人, wx: idea_000000。
+
 
 
